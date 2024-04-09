@@ -27,7 +27,7 @@ except IOError:
 
 def createQueryUrl(dqlQuery, size=50):
     url = "https://kg.diffbot.com" + \
-          "/kg/dql_endpoint/stream?token="+TOKEN+"&type=query&size=" + str(size) + \
+          "/kg/v3/dql?token="+TOKEN+"&type=query&format=jsonl&size=" + str(size) + \
           "&query=" + urllib.parse.quote_plus(dqlQuery)
     print(url)
     return url

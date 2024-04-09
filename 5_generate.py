@@ -50,7 +50,7 @@ def cache_result(url, ret):
 
 def queryKG(dqlQuery, size=50, from_index=0, jsonmode='simple', debug=False):
     url = "https://kg.diffbot.com" + \
-          "/kg/dql_endpoint/stream?token="+TOKEN+"&type=query&size=" + str(size) + \
+          "/kg/v3/dql?token="+TOKEN+"&type=query&format=jsonl&size=" + str(size) + \
           "&query=" + urllib.parse.quote_plus(dqlQuery) + \
           "&jsonmode=" + jsonmode + "&from=" + str(from_index)
     if url in cache:
